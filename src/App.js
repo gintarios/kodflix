@@ -23,14 +23,29 @@ class App extends Component {
         </p>
         <img src={MovieCover} className="Film" alt="Spider Man" />
 
-        <div className="Container">        
-            <img src={Movie1} className="MovieImg" alt="Black Mirror" />
-            <img src={Movie2} className="MovieImg" alt="Breaking Bad" />
-            <img src={Movie3} className="MovieImg" alt="Death Note" />
-            <img src={Movie4} className="MovieImg" alt="Got" />
-            <img src={Movie5} className="MovieImg" alt="Fear the Walking Dead" />
-            <img src={Movie6} className="MovieImg" alt="The Wire" />   
-        </div> 
+        <div className="Row">
+          <div className="Column">
+            <img src={Movie1} alt="Black Mirror" />
+          </div>
+          <div className="Column">
+            <img src={Movie2} alt="Breaking Bad" />
+          </div>
+          <div className="Column">
+            <img src={Movie3} alt="Death Note" />
+          </div>
+        </div>
+        <div className="Row">
+          <div className="Column">
+            <img src={Movie4} alt="Got" />
+          </div>
+          <div className="Column">
+            <img src={Movie5} alt="Fear the Walking Dead" />
+          </div>
+          <div className="Column">
+            <img src={Movie6} alt="The Wire" />   
+          </div>
+        </div>                 
+          
       </div>
       
        

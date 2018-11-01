@@ -27,16 +27,20 @@
   to { transform: rotate(360deg); }
 }
 
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .Film {
   width: 100%; 
 }
 
-.Container {
+.Row {
   display: flex;
-  flex-wrap: wrap;
 }
 
-.MovieImg {
-  height: 50vw;
-  width: 33.33%;
-}
+.Column {
+  flex:1;
+} 
