@@ -43,12 +43,30 @@ img {
 
 .Column {
   flex:1;
+  position: relative;
 } 
+
+
+
+.overlay {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  color: rgb(218, 218, 218);
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.Column:hover .overlay {
+  opacity: 1;
+}
+
 
 
 /*Small screens: from 0 to 620px*/
 @media only screen and (max-width: 620px) {
   .Row {
-    display: block; 
+    flex-direction: column; 
   }
 }

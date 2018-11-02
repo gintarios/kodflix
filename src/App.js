@@ -25,29 +25,29 @@ class App extends Component {
 
         <div className="Row">
           <div className="Column">
-            <h2>Black Mirror</h2>
-            <img src={Movie1} alt="Black Mirror" />
+            <div className="overlay"><h2>Black Mirror</h2></div>
+            <img src={Movie1} alt="Black Mirror" /> 
           </div>
           <div className="Column">
-            <h2>Breking Bad</h2>
+          <div className="overlay"><h2>Breaking Bad</h2></div>
             <img src={Movie2} alt="Breaking Bad" />
-          </div>
+            </div>
           <div className="Column">
-            <h2>Death Note</h2>
-            <img src={Movie3} alt="Death Note" />
+          <div className="overlay"><h2>Death Note</h2></div>
+            <img src={Movie3} alt="Death Note" /> 
           </div>
         </div>
         <div className="Row">
           <div className="Column">
-            <h2>Game of Thrones</h2>
-            <img src={Movie4} alt="Got" />
+          <div className="overlay"><h2>Game of Thrones</h2></div>
+          <img src={Movie4} alt="Got" /> 
           </div>
           <div className="Column">
-            <h2>Walking Death</h2>
+            <div className="overlay"><h2>Walking Dead</h2></div>
             <img src={Movie5} alt="Fear the Walking Dead" />
           </div>
           <div className="Column">
-            <h2>The Wire</h2>
+            <div className="overlay"><h2>The Wire</h2></div>
             <img src={Movie6} alt="The Wire" />   
           </div>
         </div>                 
