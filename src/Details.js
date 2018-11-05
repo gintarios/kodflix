@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+
 const Details = () => (
     <div>
         Hello. This will be the details page for each Movie &amp; TV Show:) <br />

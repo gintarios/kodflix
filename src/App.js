@@ -7,15 +7,13 @@ import Details from './Details';
 
 
 class App extends Component {
-
   render() {
     return (
       <Router>
         <div className="App">
           <div>
             <Route path="/" component={Gallery} exact />
-            <Route path="/details" component={Details} exact />
-
+            <Route path="/:url" component={Details} exact />
           </div>
 
         </div>
