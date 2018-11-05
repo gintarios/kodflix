@@ -8,7 +8,7 @@ import Movie5 from "./img/walkingdead.jpg";
 import Movie6 from "./img/thewire.jpg";
 
 
-class Home extends Component {
+class Gallery extends Component {
     render() {
         return (
             <div>
@@ -27,4 +27,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default Gallery;
