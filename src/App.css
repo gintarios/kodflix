@@ -1,30 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: rgba(0, 255, 179, 0.541);
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
 
 img {
@@ -34,41 +14,16 @@ img {
 }
 
 .Film {
-  width: 100%; 
+  width: 100%;
 }
 
 .Row {
   display: flex;
 }
 
-.Column {
-  flex:1;
-  position: relative;
-  overflow: hidden;
-} 
-
-
-
-.overlay {
-  position: absolute;
-  bottom: -100px;
-  width: 100%;
-  color: rgb(218, 218, 218);
-  background-color: rgba(0, 0, 0, 0.6);
-  opacity: 0;
-  transition: bottom ease 0.4s;
-}
-
-.Column:hover .overlay {
-  opacity: 1;
-  bottom: 0px;
-}
-
-
-
 /*Small screens: from 0 to 620px*/
 @media only screen and (max-width: 620px) {
   .Row {
-    flex-direction: column; 
+    flex-direction: column;
   }
 }
