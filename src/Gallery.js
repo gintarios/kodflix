@@ -12,12 +12,10 @@ class Gallery extends Component {
     render() {
         return (
             <div>
-                <div className="Row">
+                <div className="Container">
                     <Movie movietitle="Black Mirror" movieimg={Movie1} url="/black-mirror" />
                     <Movie movietitle="Breaking Bad" movieimg={Movie2} url="/breaking-bad" />
                     <Movie movietitle="Death Note" movieimg={Movie3} url="/death-note" />
-                </div>
-                <div className="Row">
                     <Movie movietitle="Game of Thrones" movieimg={Movie4} url="/game-of-thrones" />
                     <Movie movietitle="Walking Dead" movieimg={Movie5} url="/walking-dead" />
                     <Movie movietitle="The Wire" movieimg={Movie6} url="/the-wire" />
