@@ -6,6 +6,7 @@ import Movie3 from "./img/deathnote.jpg";
 import Movie4 from "./img/got.jpg";
 import Movie5 from "./img/walkingdead.jpg";
 import Movie6 from "./img/thewire.jpg";
+import movies from "./Gallery-get";
 
 
 class Gallery extends Component {
@@ -13,13 +14,13 @@ class Gallery extends Component {
         return (
             <div>
                 <div className="Container">
-                    <Movie movietitle="Black Mirror" movieimg={Movie1} url="/black-mirror" />
-                    <Movie movietitle="Breaking Bad" movieimg={Movie2} url="/breaking-bad" />
-                    <Movie movietitle="Death Note" movieimg={Movie3} url="/death-note" />
-                    <Movie movietitle="Game of Thrones" movieimg={Movie4} url="/game-of-thrones" />
-                    <Movie movietitle="Walking Dead" movieimg={Movie5} url="/walking-dead" />
-                    <Movie movietitle="The Wire" movieimg={Movie6} url="/the-wire" />
+                    {movies.map(function (movie, index) {
+                        return <Movie url={movies[index].url}
+                            movietitle={movies[index].movietitle}
+                            movieimg={movies[index].movieimg} />
+                    })}
                 </div>
+
             </div>
         );
     }
