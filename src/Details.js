@@ -2,13 +2,29 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 
-const Details = () => (
-    <div>
-        Hello. This will be the details page for each Movie &amp; TV Show:) <br />
-        <Link to="/" exact> Go back to the Home page. </Link>
-    </div >
+class Details extends Component {
 
-);
+    state = {
+        message: "Hello! This will be the details page for each Movie & TV Show!:)"
+    }
+
+    changeState = () => {
+        this.setState({ message: "Comming soon!!!!" });
+    }
+
+    render() {
+        return (
+            <div>
+                <div>{this.state.message}</div>
+                <div onLoad={setTimeout(() => this.changeState(), 3000)} > </div>
+                <br />
+                <Link to="/" exact> Go back to the Home page. </Link>
+            </div >
+        );
+    }
+}
+
+
 
 export default Details;
 
