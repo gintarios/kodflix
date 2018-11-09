@@ -1,14 +1,27 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import movies from "./Gallery-get";
 
 
-const Details = () => (
-    <div>
-        Hello. This will be the details page for each Movie &amp; TV Show:) <br />
-        <Link to="/" exact> Go back to the Home page. </Link>
-    </div >
+class Details extends Component {
 
-);
+    findMovieTitle = () => {
+        const findmovie = movies.find(movie => movie.url == this.props.match.url);
+        return findmovie ? findmovie.movietitle : <Redirect to="/not-found" />
+    }
+
+    render() {
+        return (
+            <div>
+                {this.findMovieTitle()}
+                <br />
+                <Link to="/" exact> Go back to the Home page. </Link>
+            </div >
+        );
+    }
+}
+
+
 
 export default Details;
 
