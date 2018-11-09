@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import Movie from './Movie';
-import Movie1 from "./img/blackmirror.jpg";
-import Movie2 from "./img/breakingbad.jpg";
-import Movie3 from "./img/deathnote.jpg";
-import Movie4 from "./img/got.jpg";
-import Movie5 from "./img/walkingdead.jpg";
-import Movie6 from "./img/thewire.jpg";
-import movies from "./Gallery-get";
+import movies from "./data-get";
 
 
 class Gallery extends Component {

@@ -16,9 +16,9 @@ class App extends Component {
         <div className="App">
 
           <Switch>
-            <Route path="/" component={Gallery} exact />
-            <Route path="/not-found" component={NotFound} exact />
-            <Route path="/:url" component={Details} exact />
+            <Route path="/" component={Gallery} exact="true" />
+            <Route path="/not-found" component={NotFound} exact="true" />
+            <Route path="/:url" component={Details} exact="true" />
 
           </Switch>
         </div>

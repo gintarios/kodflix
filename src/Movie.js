@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Movie = props => {
     return (
         <div className="Column">
-            <Link to={props.url} exact>
+            <Link to={props.url} exact="true">
 
                 <div className="overlay">
                     <h2>{props.movietitle}</h2>
