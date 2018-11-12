@@ -14,7 +14,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "start-backend": "nodemon src/backend/app.js"
+    "start-backend": "nodemon src/backend/app.js",
+    "start-all": "npm-run-all -p start start-backend"
   },
   "browserslist": [
     ">0.2%",
@@ -23,6 +24,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@types/react-router-dom": "^4.3.1"
+    "@types/react-router-dom": "^4.3.1",
+    "npm-run-all": "^4.1.3"
   }
 }
