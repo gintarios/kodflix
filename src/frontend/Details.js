@@ -5,7 +5,6 @@ import movies from "./data-get";
 
 class Details extends Component {
 
-
     findMovieTitle = () => {
         const findmovie = movies.find(movie => movie.url === this.props.match.url);
         return findmovie ? findmovie.movietitle : <Redirect to="/not-found" />
@@ -19,7 +18,10 @@ class Details extends Component {
         return findmovie ? findmovie.movieimg : "No Image found"
     }
 
+
+
     render() {
+
         return (
             <div>
                 <div className="detailsContainer">

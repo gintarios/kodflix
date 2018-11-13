@@ -9,6 +9,18 @@ import NotFound from './NotFound';
 
 
 class App extends Component {
+
+  componentDidMount() {
+    fetch('/rest/shows')
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (myJson) {
+        console.log(JSON.stringify(myJson));
+      })
+      .catch(error => console.error('Error:', error));
+  }
+
   render() {
     return (
       <Router>
@@ -16,9 +28,9 @@ class App extends Component {
         <div className="App">
 
           <Switch>
-            <Route path="/" component={Gallery} exact="true" />
-            <Route path="/not-found" component={NotFound} exact="true" />
-            <Route path="/:url" component={Details} exact="true" />
+            <Route path="/" component={Gallery} exact />
+            <Route path="/not-found" component={NotFound} exact />
+            <Route path="/:url" component={Details} exact />
 
           </Switch>
         </div>
