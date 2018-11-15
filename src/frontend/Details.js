@@ -17,43 +17,27 @@ class Details extends Component {
             .then(response => response.json())
             .then(json => this.setState({
                 isLoaded: true,
-                movies: json,
+                movie: json.find(movie => movie.id === this.props.match.url)
             }))
     }
 
-
-    findMovieTitle = () => {
-        const { movies } = this.state;
-        const findmovie = movies.find(movie => movie.id === this.props.match.url);
-        return findmovie ? findmovie.title : <Redirect to="/not-found" />
-    }
-
-    findSynopsis = () => {
-        const { movies } = this.state;
-        const findmovie = movies.find(movie => movie.id === this.props.match.url);
-        return findmovie ? findmovie.synopsis : "No Synopsis found"
-    }
-    findMovieImg = () => {
-        const { movies } = this.state;
-        const findmovie = movies.find(movie => movie.id === this.props.match.url);
-        return findmovie ? findmovie.id : "No Image found"
-    }
-
-
     render() {
-        const { isLoaded, movies } = this.state;
+        const { isLoaded, movie } = this.state;
         if (!isLoaded) {
             return <div className="loader">
                 <div className="icon">Loading...</div>
             </div>
-        } else {
+        } else if (movie === undefined) {
+            return <Redirect to="/not-found" />
+        }
+        else {
 
             return (
                 <div>
                     <div className="detailsContainer">
-                        <div className="detailstitle"> {this.findMovieTitle()}</div>
-                        <div className="detailsbox detailssynopsis">{this.findSynopsis()}</div>
-                        <div className="detailsbox detailsimage"><img src={require(`./common/images${this.findMovieImg()}.jpg`)} alt="Movie Cover" /></div>
+                        <div className="detailstitle"> {movie.title}</div>
+                        <div className="detailsbox detailssynopsis">{movie.synopsis}</div>
+                        <div className="detailsbox detailsimage"><img src={require(`./common/images${movie.id}.jpg`)} alt="Movie Cover" /></div>
                         <div className="detailslink" > <Link to="/" exact="true"> <p>Go back to the Home page</p></Link> </div>
                         <br />
                     </div>
@@ -64,8 +48,6 @@ class Details extends Component {
 
     }
 }
-
-
 
 export default Details;
 
