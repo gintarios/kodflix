@@ -103,6 +103,25 @@ img {
 
 .loader {
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 30px;
+  border: 16px solid #22599c52;
+  border-radius: 50%;
+  border-top: 16px solid #fe4365bb;
+  width: 90px;
+  height: 90px;
+  animation: spin 2s linear infinite;
+}
+
+
+@keyframes spin {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
 }
 
 

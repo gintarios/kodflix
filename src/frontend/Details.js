@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import Loading from './Loading';
 
 
 class Details extends Component {
@@ -24,9 +25,7 @@ class Details extends Component {
     render() {
         const { isLoaded, movie } = this.state;
         if (!isLoaded) {
-            return <div className="loader">
-                <div className="icon">Loading...</div>
-            </div>
+            return <Loading />
         } else if (movie === undefined) {
             return <Redirect to="/not-found" />
         }
