@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-// import Movie from './Movie';
 import { Link } from 'react-router-dom';
-// import movies from "./data-get";
-
+import Loading from './Loading';
 
 class Gallery extends Component {
 
@@ -26,13 +24,9 @@ class Gallery extends Component {
 
     render() {
         const { isLoaded, movies } = this.state;
-        if (!isLoaded) {
-            return <div className="loader">
-                <div className="icon">Loading...</div>
-            </div>
-        } else {
 
-            return (
+        return (!isLoaded) ? <Loading /> :
+            (
                 <div>
                     <div className="Container">
                         {movies.map(function (movie, index) {
@@ -50,7 +44,6 @@ class Gallery extends Component {
 
                 </div>
             );
-        }
     }
 }
 
