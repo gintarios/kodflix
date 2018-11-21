@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import { BrowserRouter as Router } from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import { Switch } from 'react-router';
+import ReactGA from 'react-ga';
 import "./App.css";
 import Gallery from './Gallery';
 import Details from './Details';
 import NotFound from './NotFound';
+
 
 
 class App extends Component {
@@ -20,6 +22,13 @@ class App extends Component {
       })
       .catch(error => console.error('Error:', error));
   }
+
+
+  initializeReactGA() {
+    ReactGA.initialize('UA-129509844-1');
+    ReactGA.pageview('/homepage');
+  }
+
 
   render() {
     return (
@@ -37,6 +46,7 @@ class App extends Component {
       </Router>
     );
   }
+
 }
 
 
