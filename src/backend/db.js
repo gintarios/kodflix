@@ -5,8 +5,6 @@ require('dotenv').config();
 
 const url = process.env.DB_URL_PRD || process.env.DB_URL_DEV;
 
-
-
 const index = url.lastIndexOf("kodflix");
 const database = url.substr(index, 7);
 
