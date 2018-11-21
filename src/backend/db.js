@@ -3,9 +3,9 @@ const assert = require('assert');
 require('dotenv').config();
 
 
-const url
-// = process.env.DB_URL_PRD || process.env.DB_URL_DEV;
-process.env.NODE_ENV === "production" ? url = process.env.DB_URL_PRD : url = process.env.DB_URL_DEV;
+const url = process.env.NODE_ENV === "production" ?
+    process.env.DB_URL_PRD :
+    process.env.DB_URL_DEV;
 
 const database = url.substr(url.lastIndexOf('/') + 1);
 
