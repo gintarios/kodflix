@@ -21,7 +21,7 @@
     "start-cold-server": "node src/backend/app.js",
     "start-db": "mongod",
     "start-dev": "npm-run-all -p start-frontend start-hot-server start-db",
-    "start": "npm-run-all -s build start-cold-server "
+    "start": "npm-run-all -s build start-cold-server"
   },
   "browserslist": [
     ">0.2%",
