@@ -14,14 +14,13 @@ class App extends Component {
 
 
   initializeReactGA() {
+    const history = createBrowserHistory();
     ReactGA.initialize('UA-129509844-1');
     ReactGA.pageview('/');
     history.listen(location => ReactGA.pageview(location.pathname));
   }
 
-
   componentDidMount() {
-    initializeReactGA()
     fetch('/rest/shows')
       .then(function (response) {
         return response.json();
