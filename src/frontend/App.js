@@ -24,7 +24,7 @@ class App extends Component {
   }
 
 
-  componentWillMount() {
+  initializeReactGA() {
     ReactGA.initialize('UA-129509844-1');
     ReactGA.pageview('/');
     history.listen(location => ReactGA.pageview(location.pathname));
