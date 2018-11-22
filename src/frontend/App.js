@@ -3,11 +3,11 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import { Switch } from 'react-router';
 import ReactGA from 'react-ga';
+import { createBrowserHistory } from 'history';
 import "./App.css";
 import Gallery from './Gallery';
 import Details from './Details';
 import NotFound from './NotFound';
-
 
 
 class App extends Component {
@@ -24,10 +24,11 @@ class App extends Component {
   }
 
 
-  // initializeReactGA() {
-  //   ReactGA.initialize('UA-129509844-1');
-  //   ReactGA.pageview('/');
-  // }
+  componentDidMount() {
+    ReactGA.initialize('UA-129509844-1');
+    ReactGA.pageview('/');
+    history.listen(location => ReactGA.pageview(location.pathname));
+  }
 
 
   render() {
