@@ -13,7 +13,6 @@ import NotFound from './NotFound';
 class App extends Component {
 
   componentDidMount() {
-    initializeReactGA();
     fetch('/rest/shows')
       .then(function (response) {
         return response.json();
@@ -25,10 +24,10 @@ class App extends Component {
   }
 
 
-  initializeReactGA() {
-    ReactGA.initialize('UA-129509844-1');
-    ReactGA.pageview('/');
-  }
+  // initializeReactGA() {
+  //   ReactGA.initialize('UA-129509844-1');
+  //   ReactGA.pageview('/');
+  // }
 
 
   render() {
