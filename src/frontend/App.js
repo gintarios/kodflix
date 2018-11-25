@@ -12,13 +12,25 @@ import NotFound from './NotFound';
 
 class App extends Component {
 
-
-  initializeReactGA() {
-    const history = createBrowserHistory();
+  constructor({ history, location }) {
+    super();
     ReactGA.initialize('UA-129509844-1');
+    this.tracker(location);
+    history.listen((location) => this.tracker(location));
+  }
+
+  tracker(location) {
+    let host = window.location.hostname;
+    host !== "localhost" ? ReactGA.pageview(location.pathname + location.search + location.hash) : null;
+  }
+
+
+  initializeReactGA = () => {
+    const history = createBrowserHistory();
     ReactGA.pageview('/');
     history.listen(location => ReactGA.pageview(location.pathname));
   }
+
 
   componentDidMount() {
     fetch('/rest/shows')
