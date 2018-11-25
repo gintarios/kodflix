@@ -20,8 +20,7 @@ class App extends Component {
   }
 
   tracker(location) {
-    let host = window.location.hostname;
-    host !== "localhost" ? ReactGA.pageview(location.pathname + location.search + location.hash) : null;
+    ReactGA.pageview(location.pathname + location.search + location.hash);
   }
 
   componentDidMount() {
