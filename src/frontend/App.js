@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router } from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import { Switch } from 'react-router';
 import ReactGA from 'react-ga';
-import { createBrowserHistory } from 'history';
 import "./App.css";
 import Gallery from './Gallery';
 import Details from './Details';
@@ -15,12 +13,7 @@ class App extends Component {
   constructor({ history, location }) {
     super();
     ReactGA.initialize('UA-129509844-1');
-    this.tracker(location);
-    history.listen((location) => this.tracker(location));
-  }
 
-  tracker(location) {
-    ReactGA.pageview(location.pathname + location.search + location.hash);
   }
 
   componentDidMount() {
@@ -34,27 +27,18 @@ class App extends Component {
       .catch(error => console.error('Error:', error));
   }
 
-
-
-
   render() {
     return (
-      <Router>
-
-        <div className="App">
-
-          <Switch>
-            <Route path="/" component={Gallery} exact />
-            <Route path="/not-found" component={NotFound} exact />
-            <Route path="/:url" component={Details} exact />
-
-          </Switch>
-        </div>
-      </Router>
+      <div className="App">
+        <Switch>
+          <Route path="/" component={Gallery} exact />
+          <Route path="/not-found" component={NotFound} exact />
+          <Route path="/:url" component={Details} exact />
+        </Switch>
+      </div>
     );
   }
 
 }
-
 
 export default App;
