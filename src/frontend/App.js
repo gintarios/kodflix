@@ -6,15 +6,23 @@ import "./App.css";
 import Gallery from './Gallery';
 import Details from './Details';
 import NotFound from './NotFound';
-
+import { createBrowserHistory } from "history";
 
 class App extends Component {
 
-  constructor({ history, location }) {
+  constructor(props) {
     super();
     ReactGA.initialize('UA-129509844-1');
-
+    const history = createBrowserHistory();
+    const location = history.location;
+    this.trackPageView(location);
+    history.listen((location) => this.trackPageView(location))
   }
+
+  trackPageView(location) {
+    ReactGA.pageview(location.pathname);
+  }
+
 
   componentDidMount() {
     fetch('/rest/shows')
