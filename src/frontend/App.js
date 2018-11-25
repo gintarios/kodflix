@@ -15,6 +15,7 @@ class App extends Component {
     ReactGA.initialize('UA-129509844-1');
     const history = createBrowserHistory();
     const location = history.location;
+    this.trackPageView(location);
     history.listen((location) => this.trackPageView(location))
   }
 
