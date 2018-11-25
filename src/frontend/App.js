@@ -10,7 +10,7 @@ import { createBrowserHistory } from "history";
 
 class App extends Component {
 
-  constructor(props) {
+  constructor() {
     super();
     ReactGA.initialize('UA-129509844-1');
     const history = createBrowserHistory();
@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   trackPageView(location) {
-    ReactGA.pageview(location.pathname);
+    ReactGA.pageview(location.pathname + location.search + location.hash);
   }
 
 
