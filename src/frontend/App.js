@@ -24,14 +24,6 @@ class App extends Component {
     host !== "localhost" ? ReactGA.pageview(location.pathname + location.search + location.hash) : null;
   }
 
-
-  initializeReactGA = () => {
-    const history = createBrowserHistory();
-    ReactGA.pageview('/');
-    history.listen(location => ReactGA.pageview(location.pathname));
-  }
-
-
   componentDidMount() {
     fetch('/rest/shows')
       .then(function (response) {
