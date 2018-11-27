@@ -10,7 +10,8 @@ import { createBrowserHistory } from "history";
 
 class App extends Component {
 
-  componentDidMount() {
+  constructor() {
+    super();
     ReactGA.initialize('UA-129509844-1');
     const history = createBrowserHistory();
     const location = history.location;
