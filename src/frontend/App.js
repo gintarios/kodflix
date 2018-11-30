@@ -6,8 +6,21 @@ import "./App.css";
 import Gallery from './Gallery';
 import Details from './Details';
 import NotFound from './NotFound';
+import { withRouter } from 'react-router-dom';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    ReactGA.initialize('UA-129509844-1');
+    this.trackPageView(window.location);
+    props.history.listen(location => this.trackPageView(location))
+  }
+
+  trackPageView(location) {
+    console.log('hello');
+    ReactGA.pageview(location.pathname + location.search + location.hash);
+  }
 
   componentDidMount() {
     fetch('/rest/shows')
@@ -21,8 +34,6 @@ class App extends Component {
   }
 
   render() {
-    ReactGA.initialize('UA-129509844-1');
-    ReactGA.pageview(window.location.pathname + window.location.search + window.location.hash);
     return (
       <div className="App">
         <Switch>
@@ -36,4 +47,4 @@ class App extends Component {
 
 }
 
-export default App;
+export default withRouter(App);
