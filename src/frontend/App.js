@@ -6,22 +6,8 @@ import "./App.css";
 import Gallery from './Gallery';
 import Details from './Details';
 import NotFound from './NotFound';
-import { createBrowserHistory } from "history";
 
 class App extends Component {
-
-  constructor() {
-    super();
-    ReactGA.initialize('UA-129509844-1');
-    const history = createBrowserHistory();
-    const location = history.location;
-    this.trackPageView(location);
-    history.listen((location) => this.trackPageView(location))
-  }
-
-  trackPageView(location) {
-    ReactGA.pageview(location.pathname + location.search + location.hash);
-  }
 
   componentDidMount() {
     fetch('/rest/shows')
@@ -35,6 +21,8 @@ class App extends Component {
   }
 
   render() {
+    ReactGA.initialize('UA-129509844-1');
+    ReactGA.pageview(window.location.pathname + window.location.search + window.location.hash);
     return (
       <div className="App">
         <Switch>

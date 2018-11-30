@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import Loading from './Loading';
 
-
 class Details extends Component {
 
     constructor(props) {
