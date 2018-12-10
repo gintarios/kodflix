@@ -7,6 +7,7 @@ import Gallery from "./Gallery";
 import Details from "./Details";
 import NotFound from "./NotFound";
 import { withRouter } from "react-router-dom";
+import Menu from "./Menu";
 
 class App extends Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Menu />
         <Switch>
           <Route path="/" component={Gallery} exact />
           <Route path="/not-found" component={NotFound} exact />
