@@ -5,10 +5,11 @@
 
 .App {
   text-align: center;
-  background-color:#08182b;
+  background-color: #08182b;
   color: #fe4365;
   height: 100%;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .Container {
@@ -18,11 +19,10 @@
 }
 
 .Column {
-  position: relative; 
+  position: relative;
   flex: 1;
   flex-basis: 300px;
 }
-
 
 img {
   height: 100%;
@@ -62,12 +62,11 @@ img {
 .detailsbox {
   flex: 1;
   padding: 30px 5px;
-  
 }
 
 .detailssynopsis {
   font-size: 20px;
-  color:#f4f4f4;  
+  color: #f4f4f4;
   padding-left: 50px;
   padding-right: 50px;
 }
@@ -86,7 +85,6 @@ img {
   text-decoration: underline;
   text-decoration-color: grey;
 }
-
 /* Small screens: from 0 to 620px */
 @media only screen and (max-width: 620px) {
   .detailsContainer {
@@ -99,7 +97,7 @@ img {
     font-weight: 200;
     line-height: 1.5;
   }
-} 
+}
 
 .loader {
   height: 100vh;
@@ -118,10 +116,11 @@ img {
   animation: spin 2s linear infinite;
 }
 
-
 @keyframes spin {
-  0% {transform: rotate(0deg);}
-  100% {transform: rotate(360deg);}
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-
-

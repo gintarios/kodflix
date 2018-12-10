@@ -1,36 +1,23 @@
 import React, { Component } from "react";
-import Route from 'react-router-dom/Route';
-import { Switch } from 'react-router';
-import ReactGA from 'react-ga';
+import Route from "react-router-dom/Route";
+import { Switch } from "react-router";
+import ReactGA from "react-ga";
 import "./App.css";
-import Gallery from './Gallery';
-import Details from './Details';
-import NotFound from './NotFound';
-import { withRouter } from 'react-router-dom';
+import Gallery from "./Gallery";
+import Details from "./Details";
+import NotFound from "./NotFound";
+import { withRouter } from "react-router-dom";
 
 class App extends Component {
-
   constructor(props) {
     super(props);
-    ReactGA.initialize('UA-129509844-1');
+    ReactGA.initialize("UA-129509844-1");
     this.trackPageView(window.location);
-    props.history.listen(location => this.trackPageView(location))
+    props.history.listen(location => this.trackPageView(location));
   }
 
   trackPageView(location) {
-    console.log('hello');
     ReactGA.pageview(location.pathname + location.search + location.hash);
-  }
-
-  componentDidMount() {
-    fetch('/rest/shows')
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (myJson) {
-        console.log(JSON.stringify(myJson));
-      })
-      .catch(error => console.error('Error:', error));
   }
 
   render() {
@@ -44,7 +31,6 @@ class App extends Component {
       </div>
     );
   }
-
 }
 
 export default withRouter(App);
