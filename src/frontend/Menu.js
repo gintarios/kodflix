@@ -1,20 +1,47 @@
-import React from "react";
+import React, { Component } from "react";
+import Icon1 from "./icons/icon-menu-closed";
+import Icon2 from "./icons/icon-menu-open";
+import Icon3 from "./icons/icon-menu-home";
+import Icon4 from "./icons/icon-menu-tvshows";
 
-const Menu = () => {
-  return (
-    <div className="menu">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
-        viewBox="0 0 24 24"
-      >
-        <g fill="#fe4365">
-          <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z" />
-        </g>
-      </svg>
-    </div>
-  );
-};
+class Menu extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isMenuVisible: true
+    };
+  }
 
+  toggleMenu = () => {
+    this.setState({
+      isMenuVisible: !this.state.isMenuVisible
+    });
+  };
+
+  render() {
+    let isMenuVisible = this.state.isMenuVisible;
+    return isMenuVisible ? (
+      <div className="menu-closed">
+        <button onClick={this.toggleMenu} className="icon-menu">
+          <Icon1 />
+        </button>
+      </div>
+    ) : (
+        <div className="menu-open">
+          <button onClick={this.toggleMenu} className="icon-menu">
+            <Icon2 />
+          </button>
+
+          <div className="icon-container">
+            <div className="icon-item">
+              <Icon3 /> Home
+            </div>
+            <div className="icon-item">
+              <Icon4 /> Manage TV Shows
+            </div>
+          </div>
+        </div>
+    );
+  }
+}
 export default Menu;
