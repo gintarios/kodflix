@@ -3,6 +3,7 @@ import Icon1 from "./icons/icon-menu-closed";
 import Icon2 from "./icons/icon-menu-open";
 import Icon3 from "./icons/icon-menu-home";
 import Icon4 from "./icons/icon-menu-tvshows";
+import { Link } from "react-router-dom";
 
 class Menu extends Component {
   constructor(props) {
@@ -27,20 +28,24 @@ class Menu extends Component {
         </button>
       </div>
     ) : (
-        <div className="menu-open">
-          <button onClick={this.toggleMenu} className="icon-menu">
-            <Icon2 />
-          </button>
+      <div className="menu-open">
+        <button onClick={this.toggleMenu} className="icon-menu">
+          <Icon2 />
+        </button>
 
-          <div className="icon-container">
-            <div className="icon-item">
+        <div className="icon-container">
+          <div className="icon-item">
+            <Link to="/">
               <Icon3 /> Home
-            </div>
-            <div className="icon-item">
+            </Link>
+          </div>
+          <div className="icon-item">
+            <Link to="/manage/tv-shows">
               <Icon4 /> Manage TV Shows
-            </div>
+            </Link>
           </div>
         </div>
+      </div>
     );
   }
 }
