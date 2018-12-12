@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import Icon1 from "./icons/icon-menu-closed";
-import Icon2 from "./icons/icon-menu-open";
-import Icon3 from "./icons/icon-menu-home";
-import Icon4 from "./icons/icon-menu-tvshows";
+import "./Menu.css";
+import Icon1 from "../common/icons/icon-menu-closed";
+import Icon2 from "../common/icons/icon-menu-open";
+import Icon3 from "../common/icons/icon-menu-home";
+import Icon4 from "../common/icons/icon-menu-tvshows";
 import { Link } from "react-router-dom";
 
 class Menu extends Component {
@@ -34,16 +35,16 @@ class Menu extends Component {
         </button>
 
         <div className="icon-container">
-          <div className="icon-item">
-            <Link to="/">
+          <Link to="/">
+            <div className="icon-item">
               <Icon3 /> Home
-            </Link>
-          </div>
-          <div className="icon-item">
-            <Link to="/manage/tv-shows">
+            </div>
+          </Link>
+          <Link to="/manage/tv-shows">
+            <div className="icon-item">
               <Icon4 /> Manage TV Shows
-            </Link>
-          </div>
+            </div>
+          </Link>
         </div>
       </div>
     );

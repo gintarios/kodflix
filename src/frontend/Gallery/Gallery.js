@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Loading from "./Loading";
+import Loading from "../Loader/Loading";
+import "./Gallery.css";
 
 class Gallery extends Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class Gallery extends Component {
                     <h2>{movie.title}</h2>
                   </div>
                   <img
-                    src={require(`./common/images/${movie.id}.jpg`)}
+                    src={require(`../common/images/covers/${movie.id}.jpg`)}
                     alt="Movie Cover"
                   />
                 </Link>

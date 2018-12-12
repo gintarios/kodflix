@@ -3,11 +3,11 @@ import Route from "react-router-dom/Route";
 import { Switch } from "react-router";
 import ReactGA from "react-ga";
 import "./App.css";
-import Gallery from "./Gallery";
-import Details from "./Details";
+import Gallery from "./Gallery/Gallery";
+import Details from "./Details/Details";
 import NotFound from "./NotFound";
 import { withRouter } from "react-router-dom";
-import Menu from "./Menu";
+import Menu from "./Menu/Menu";
 import ManageTVShows from "./ManageTvShows";
 
 class App extends Component {
