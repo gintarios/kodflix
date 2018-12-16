@@ -2,16 +2,23 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  color: rgb(218, 218, 218);
+  color: #dadada;
 }
 
 .App {
   text-align: center;
   background-color: #08182b;
-  height: 100%;
+  /* height: 100%; */
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
 
+.component-play {
+  width: 100%;
+  height: 100vh;
+}
 
-
+iframe {
+  width: 100%;
+  height: 100%;
+}

@@ -52,25 +52,24 @@ class Details extends Component {
           <div className="detailstitle"> {movie.title}</div>
           <div className="detailsbox detailssynopsis">{movie.synopsis}</div>
 
-          <div className="details-icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="160"
-              height="160"
-              viewBox="0 0 24 24"
-            >
-              <g fill="#fff">
-                <path d="M3 22v-20l18 10-18 10z" />
-              </g>
-            </svg>
-          </div>
-          <div className="detailslink">
-            {" "}
-            <Link to="/" exact="true">
-              {" "}
-              <p>Go back to the Home page</p>
-            </Link>{" "}
-          </div>
+          {/* <div>
+          <button class='button play'></button>
+          </div>   */}
+
+          <Link to={`/${movie.id}/play`} exact="true">
+            <div className="details-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="160"
+                height="160"
+                viewBox="0 0 24 24"
+              >
+                <g fill="#fff">
+                  <path d="M3 22v-20l18 10-18 10z" />
+                </g>
+              </svg>
+            </div>
+          </Link>
 
           <br />
         </div>

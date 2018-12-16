@@ -9,6 +9,7 @@ import NotFound from "./NotFound";
 import { withRouter } from "react-router-dom";
 import Menu from "./Menu/Menu";
 import ManageTVShows from "./ManageTvShows";
+import Play from "./Play";
 
 class App extends Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class App extends Component {
           <Route path="/not-found" component={NotFound} exact />
           <Route path="/:url" component={Details} exact />
           <Route path="/manage/tv-shows" component={ManageTVShows} exact />
+          <Route path="/:url/play" component={Play} exact />
         </Switch>
       </div>
     );
