@@ -30,7 +30,7 @@ class Play extends Component {
       <Redirect to="/not-found" />
     ) : (
       <div className="component-play">
-        <iframe src={movie.videoId} />
+        <iframe src={`${movie.videoId}?autoplay=1&mute=1&controls=0`} />
       </div>
     );
   }
