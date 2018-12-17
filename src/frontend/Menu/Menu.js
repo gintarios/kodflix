@@ -37,12 +37,24 @@ class Menu extends Component {
         <div className="icon-container">
           <Link to="/">
             <div className="icon-item">
-              <Icon3 /> Home
+              <div className="icon-box">
+                <Icon3 />
+              </div>
+              <div className="text-box">
+                {" "}
+                <h3>Home</h3>{" "}
+              </div>
             </div>
           </Link>
           <Link to="/manage/tv-shows">
             <div className="icon-item">
-              <Icon4 /> Manage TV Shows
+              <div className="icon-box">
+                <Icon4 />
+              </div>{" "}
+              <div className="text-box">
+                {" "}
+                <h3>Manage TV shows</h3>{" "}
+              </div>
             </div>
           </Link>
         </div>

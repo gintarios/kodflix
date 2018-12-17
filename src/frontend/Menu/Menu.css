@@ -33,13 +33,22 @@
 .icon-container {
   display: flex;
   flex-direction: column;
-  font-size: 22px;
-  font-weight: 700;
-  text-align: left;
 }
 
 .icon-item {
   padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.icon-box {
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 700;
+  padding-left: 10px;
+  padding-top: 6px;
 }
 
 /* Small screens: from 0 to 620px */
@@ -47,7 +56,16 @@
   .menu-open {
     background-color: #353b42ea;
     height: 100%;
-    width: 100px;
+    width: 60px;
     cursor: pointer;
+  }
+
+  .icon-container h3 {
+    visibility: hidden;
+  }
+
+  .icon-item {
+    height: 35px;
+    padding-left: 15px;
   }
 }
