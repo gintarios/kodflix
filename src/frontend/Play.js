@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Loading from "./Loader/Loading";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 class Play extends Component {
   constructor(props) {
